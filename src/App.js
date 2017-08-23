@@ -48,16 +48,10 @@ class App extends Component {
   render() {
     return (
       <div className="App container">
-        <h1>Lorem Now - Dummy Text Generator</h1>
+        <h2 className="text-center">Lorem Now - Dummy Text Generator</h2>
         <hr />
-        <form className="form-online">
-          <div className="form-group">
-            <label>Output format:</label>
-            <Select
-              value={this.state.format}
-              onChange={this.setFormat.bind(this)}
-            />
-          </div>
+        <hr />
+        <form className="form-inline">
           <div className="form-group">
             <label>Paragraphs:</label>
             <Text
@@ -65,7 +59,16 @@ class App extends Component {
               onChange={this.changeParagraphs.bind(this)}
             />
           </div>
+          <div className="form-group">
+            <label>Output format:</label>
+            <Select
+              value={this.state.format}
+              onChange={this.setFormat.bind(this)}
+            />
+          </div>
         </form>
+        <br />
+        <br />
         <Output value={this.state.text}/>
       </div>
     );
