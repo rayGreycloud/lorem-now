@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import Output from './components/Output';
 import Select from './components/controls/Select';
+import Text from './components/controls/Text';
 import './App.css';
 
 class App extends Component {
@@ -40,6 +41,10 @@ class App extends Component {
     this.setState({ format }, this.getLorem);
   }
 
+  changeParagraphs(paragraphs) {
+    this.setState({ paragraphs }, this.getLorem);
+  }
+
   render() {
     return (
       <div className="App container">
@@ -51,6 +56,13 @@ class App extends Component {
             <Select
               value={this.state.format}
               onChange={this.setFormat.bind(this)}
+            />
+          </div>
+          <div className="form-group">
+            <label>Paragraphs:</label>
+            <Text
+              value={this.state.paragraphs}
+              onChange={this.changeParagraphs.bind(this)}
             />
           </div>
         </form>
